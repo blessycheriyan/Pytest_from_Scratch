@@ -1,0 +1,35 @@
+// Full testcase run
+pytest
+
+// passed & failed tests
+pytest -rA
+
+// Specific tests functions for run
+
+pytest -rA -k login
+
+//Generating report
+pytest -rA --junitxml='Report1.xml'
+
+//Generating report html
+pytest --html=MyHTMLReport.html
+
+//Specific functions to run tests  -> smoke
+pytest .\test_second.py -m smoke
+
+//Specific functions to run tests ->  regression
+pytest .\test_second.py -m regression
+
+//Specific functions to run tests ->  regression or smoke tests
+pytest .\test_second.py -m "regression or smoke" 
+
+
+
+// Fixture case   after adding the yield
+
+
+ pytest .\test_fixture.py -s
+
+// Very fastly open multiple web driver for
+
+ pytest .\test_fixture.py -n 3
